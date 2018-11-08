@@ -1,0 +1,1 @@
+for i in `cat u_acak`; do mysql -h 172.20.0.73 -uriamande -pchopinnocturne92 user -r -s -N -e "select concat(userlogin.username,',',userinfo.phone,',',userinfo.email) from userinfo join userlogin on userinfo.userid=userlogin.userid where userlogin.username='$i';" >> userphone.csv; done
